@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>绑定事件函数</button>
+    <script>
+        // 函数的调用方式
+        // 1.普通函数
+        function fn() {
+            console.log('普通函数');
+        }
+        fn();
+        fn.call();
+
+        // 2.对象的方法
+        var o = {
+            saiHi: function () {
+                console.log('对象的方法函数');
+            }
+        }
+        o.saiHi();
+
+        // 3.构造函数
+        function Star() {
+            console.log('构造函数');
+        }
+        new Star();
+
+        // 4.绑定事件函数
+        var btn = document.querySelector('button');
+        btn.onclick = function () {
+            console.log('绑定事件函数');
+        };//点击了按钮就可以调用这个函数
+
+        // 5.定时器函数
+        setInterval(function () {
+            console.log('定时器函数');
+        }, 1000);// 这个函数是定时器自动1秒钟调用一次
+
+        // 6.立即执行函数
+        (function () {
+            console.log('立即执行函数');
+        })();
+    </script>
+</body>
+
+</html>
